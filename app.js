@@ -16,17 +16,19 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
     
-// mongoose.connect("mongodb://localhost/yelp_camp");
+    
+var url=process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
+mongoose.connect(url);
 
 // mongoose.connect("mongodb://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority");
 
-//pkFAezQ9ulg33Yj1
-const mongo_url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/test?retryWrites=true&w=majority";
+// //pkFAezQ9ulg33Yj1
+// const mongo_url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect(mongo_url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+// mongoose.connect(mongo_url, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
 
 
 // const MongoClient = require('mongodb').MongoClient;
