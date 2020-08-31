@@ -1,0 +1,36 @@
+<%- include("../partials/header");-%>
+
+
+<div class="container">
+    <header class="jumbotron">
+    
+        <div class="container">
+        
+            <h1>Welcome to Magia Con Carta</h1>
+     
+            <p>View our gorgeous decks which are used by trained magicians and cardists since the last decade</p>
+            <p><a class="btn btn-primary btn-large" href="/decks/new">Add New deck</a></p>
+           
+        </div>
+     
+    </header>
+<!--<a href="/decks/new">Add New deck</a>-->
+
+  <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+    <% decks.forEach(function(deck){%>
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail img-thumbnail">
+            <img src="<%= deck.image%>">
+            <div class="caption">
+                <h4><%=deck.name %></h4>
+            </div>
+            <p>
+                <a href="/decks/<%=deck._id %>" class="btn btn-warning">More Info </a>
+            </p>
+        </div>
+    </div>
+    <% }); %> 
+  </div>
+  
+</div>
+<%- include("../partials/footer");-%>

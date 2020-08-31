@@ -6,18 +6,18 @@ var express     = require("express"),
     passport    = require("passport"),
     methodOverride=require("method-override"),
     LocalStrategy = require("passport-local"),
-    Campground  = require("./models/campground"),
+    Deck  = require("./models/deck"),
     Comment     = require("./models/comment"),
-    User        = require("./models/user"),
-    seedDB      = require("./seeds")
+    User        = require("./models/user")
+    // seedDB      = require("./seeds")
     
 //requring routes
 var commentRoutes    = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    deckRoutes = require("./routes/decks"),
     indexRoutes      = require("./routes/index")
     
     
-var url=process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
+var url="mongodb://localhost/magic"
 mongoose.connect(url);
 
 // mongoose.connect("mongodb://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority");
@@ -68,9 +68,9 @@ app.use(function(req, res, next){
 });
 
 app.use("/", indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/decks", deckRoutes);
+app.use("/decks/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
+   console.log("The Magical Ride Has Started!");
 });

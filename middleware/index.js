@@ -1,22 +1,22 @@
-var Campground=require("../models/campground");
+var Deck=require("../models/deck");
 var Comment=require("../models/comment");
 
 
 // all the middleware goes here
 var middlewareObj=[];
 
-middlewareObj.checkCampgroundOwnership=function(req,res,next){
+middlewareObj.checkDeckOwnership=function(req,res,next){
     //is user logged in
     if(req.isAuthenticated()){
         
-        Campground.findById(req.params.id,function(err,foundCampground){
+        Deck.findById(req.params.id,function(err,foundDeck){
             if(err){
-                req.flash("error","Campground not found");
+                req.flash("error","Deck not found");
                 res.redirect("back");
             }
             else{
-            //does user own the campground?
-            if(foundCampground.author.id.equals(req.user._id)){
+            //does user own the Deck?
+            if(foundDeck.author.id.equals(req.user._id)){
                 next();
             }else{
                 req.flash("error","You do not have permmission to do that");

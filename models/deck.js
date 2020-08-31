@@ -1,7 +1,10 @@
 var mongoose=require("mongoose");
 
-var campgroundSchema=new mongoose.Schema({
+var deckSchema=new mongoose.Schema({
     name:String,
+    mobile:String,
+    email:String,
+    address:String,
     price:String,
     image:String,
     description:String,
@@ -12,6 +15,7 @@ var campgroundSchema=new mongoose.Schema({
         },
         username: String
     },
+    stock:String,
     comments: [ 
         { 
             type: mongoose.Schema.Types.ObjectId,
@@ -21,5 +25,5 @@ var campgroundSchema=new mongoose.Schema({
 });
 
 
-module.exports=mongoose.model("Campground",campgroundSchema);
+module.exports=mongoose.model("decks",deckSchema);
     
