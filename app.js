@@ -17,18 +17,18 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
     
     
-var url="mongodb://localhost/magic"
-mongoose.connect(url);
+// var url="mongodb://localhost/magic"
+// mongoose.connect(url);
 
 // mongoose.connect("mongodb://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority");
 
 // //pkFAezQ9ulg33Yj1
-// const mongo_url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/test?retryWrites=true&w=majority";
+const url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/magic?retryWrites=true&w=majority";
 
-// mongoose.connect(mongo_url, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 
 // const MongoClient = require('mongodb').MongoClient;
@@ -40,7 +40,7 @@ mongoose.connect(url);
 //   client.close();
 // });
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
@@ -71,6 +71,7 @@ app.use("/", indexRoutes);
 app.use("/decks", deckRoutes);
 app.use("/decks/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
+const port= process.env.PORT || 5000;
+ app.listen(port, function(){
    console.log("The Magical Ride Has Started!");
 });
