@@ -73,7 +73,7 @@ router.delete("/:comment_id",middleware.checkCommentOwnership,function(req,res){
         if(err){
             res.redirect("back");
         }else{
-            req.flash("success","Comment not deleted");
+            req.flash("success","Your Comment has been deleted");
             res.redirect("/decks/"+req.params.id);
         }        
     });

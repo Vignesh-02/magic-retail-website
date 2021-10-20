@@ -5,7 +5,7 @@
         Edit
         </h1> 
        <div style="width: 30%; margin: 30px auto;">
-            <form action="/campgrounds/<%=campground_id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+            <form action="/decks/<%=deck_id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="comment[text]" placeholder="text" value="<%=comment.text%>">
                 </div>
@@ -13,7 +13,7 @@
                     <button class="btn btn-lg btn-primary btn-block">Submit</button>    
                 </div>
             </form>
-            <a href="/campgrounds">Go Back</a>
+            <a href="/decks">Go Back</a>
         </div>
             
     </div>
