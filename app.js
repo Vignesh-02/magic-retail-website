@@ -21,14 +21,6 @@ var commentRoutes    = require("./routes/comments"),
     deckRoutes = require("./routes/decks"),
     indexRoutes      = require("./routes/index")
     
-    
-// var url="mongodb://localhost/magic"
-// mongoose.connect(url);
-
-// mongoose.connect("mongodb://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority");
-
-// //pkFAezQ9ulg33Yj1
-// const url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/magic?retryWrites=true&w=majority";
 
 const url = process.env.DB
 mongoose.connect(url, {
@@ -36,15 +28,6 @@ mongoose.connect(url, {
     useUnifiedTopology: true
 });
 
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
