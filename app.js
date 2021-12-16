@@ -1,3 +1,6 @@
+const env=require('dotenv');
+env.config();
+
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
@@ -11,6 +14,8 @@ var express     = require("express"),
     User        = require("./models/user")
     // seedDB      = require("./seeds")
     
+
+
 //requring routes
 var commentRoutes    = require("./routes/comments"),
     deckRoutes = require("./routes/decks"),
@@ -23,8 +28,9 @@ var commentRoutes    = require("./routes/comments"),
 // mongoose.connect("mongodb://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority");
 
 // //pkFAezQ9ulg33Yj1
-const url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/magic?retryWrites=true&w=majority";
+// const url="mongodb+srv://hope:pkFAezQ9ulg33Yj1@cluster0.2pjhn.mongodb.net/magic?retryWrites=true&w=majority";
 
+const url = process.env.DB
 mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
