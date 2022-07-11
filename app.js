@@ -22,12 +22,6 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
     
     
-// var url="mongodb://localhost/magic"
-// mongoose.connect(url);
-
-// mongoose.connect("mongodb://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority");
-
-// //pkFAezQ9ulg33Yj1
 const url=process.env.MONGODB_URL
 mongoose.connect(url, {
     useNewUrlParser: true,
