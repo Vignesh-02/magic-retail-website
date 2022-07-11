@@ -1,6 +1,8 @@
 const env=require('dotenv');
 env.config();
 
+// 12 July 2022 2 AM MongoDB has been fixed now.
+
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
