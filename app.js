@@ -1,3 +1,6 @@
+const env=require('dotenv');
+env.config();
+
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
@@ -11,6 +14,8 @@ var express     = require("express"),
     User        = require("./models/user")
     // seedDB      = require("./seeds")
     
+
+
 //requring routes
 var commentRoutes    = require("./routes/comments"),
     deckRoutes = require("./routes/decks"),
@@ -29,15 +34,6 @@ mongoose.connect(url, {
     useUnifiedTopology: true
 });
 
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://vigu:<vigu>@vigu.at1ag.mongodb.net/<Vigu>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
