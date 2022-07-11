@@ -16,7 +16,7 @@ var express     = require("express"),
         User        = require("./models/user")
     // seedDB      = require("./seeds")
     
-    const url=process.env.MONGODB_URL
+    const url=process.env.MONGODB_URI
     mongoose.connect(url, {
         useNewUrlParser: true,
         useUnifiedTopology: true
