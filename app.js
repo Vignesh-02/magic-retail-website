@@ -30,6 +30,7 @@ var express     = require("express"),
     app.use(flash());
     // seedDB();
     
+    // changed testing
     
     // PASSPORT CONFIGURATION
     app.use(require("express-session")({
